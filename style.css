@@ -3,19 +3,32 @@ li {
 }
 
 body{
-  color: #819FF7;
-  background-color:white;
+
+  background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
 }
 
 li a{
   display: inline-block;
   color: white;
-  background-color: #2EFE64;
+  background-color: #FFBF00;
   padding: 14px 16px;
   text-align: center;
   text-decoration: none;
 
 
+}
+
+
+tr{
+  color: #FFBF00;
+}
+
+p{
+  color: #FFBF00;
+}
+
+legend{
+  color: #FFBF00;
 }
 
 li a:hover{
@@ -35,10 +48,12 @@ u1 {
 }
 
 h1 {
-  color: #819FF7;
+  color: #FFBF00;
 
 }
-
+h2{
+  color: #FFBF00;
+}
 header{
   text-align: left;
 }
