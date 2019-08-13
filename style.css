@@ -19,6 +19,7 @@ li a{
 }
 
 
+
 tr{
   color: #FFBF00;
 }
@@ -32,7 +33,7 @@ legend{
 }
 
 li a:hover{
-  background-color: #819FF7 ;
+  background-color: #FF4000 ;
 }
 
 u1 {
@@ -56,4 +57,20 @@ h2{
 }
 header{
   text-align: left;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 3px solid orange;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+
 }
