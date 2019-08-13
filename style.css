@@ -1,0 +1,44 @@
+li {
+  float: left;
+}
+
+body{
+  color: #819FF7;
+  background-color:white;
+}
+
+li a{
+  display: inline-block;
+  color: white;
+  background-color: #2EFE64;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+
+
+}
+
+li a:hover{
+  background-color: #819FF7 ;
+}
+
+u1 {
+  list-style-type: none;
+  width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.active{
+  color: #819FF7
+}
+
+h1 {
+  color: #819FF7;
+
+}
+
+header{
+  text-align: left;
+}
