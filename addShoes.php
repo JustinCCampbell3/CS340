@@ -37,19 +37,23 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Escape user inputs for security
+		$shoeID = mysqli_real_escape_string($conn, $_POST['shoeID']);
+		$brand = mysqli_real_escape_string($conn, $_POST['brand']);
+		$style = mysqli_real_escape_string($conn, $_POST['style']);
+		$name = mysqli_real_escape_string($conn, $_POST['name']);
+		$size = mysqli_real_escape_string($conn, $_POST['size']);
+		$color = mysqli_real_escape_string($conn, $_POST['color']);
+		$price = mysqli_real_escape_string($conn, $_POST['price']);
 		$supplierID = mysqli_real_escape_string($conn, $_POST['supplierID']);
-		$company_name = mysqli_real_escape_string($conn, $_POST['company_name']);
-		$company_address = mysqli_real_escape_string($conn, $_POST['company_address']);
-
 // See if sid is already in the table
-		$queryIn = "SELECT * FROM Supplier where comapny_name='$company_name' ";
+		$queryIn = "SELECT * FROM Shoe where shoeID='$shoeID' ";
 		$resultIn = mysqli_query($conn, $queryIn);
 		if (mysqli_num_rows($resultIn)> 0) {
-			$msg ="<h2>Can't Add to Table</h2> There is already a supplier with sid $company_name<p>";
+			$msg ="<h2>Can't Add to Table</h2> There is already a shoe with the ID $company_name<p>";
 		} else {
 
 		// attempt insert query
-			$query = "INSERT INTO Supplier (supplierID, company_name, company_address) VALUES ('$supplierID', '$company_name', '$company_address')";
+			$query = "INSERT INTO Shoe (shoeID, brand, style, name, size, color, price, supplierID) VALUES ('$shoeID', '$brand', '$style', '$name', '$size', '$color', '$price', '$supplierID')";
 			if(mysqli_query($conn, $query)){
 				$msg =  "Record added successfully.<p>";
 			} else{
