@@ -26,20 +26,12 @@
 		<br>
 
 
-		<div class = "container">
-			<form method = "post" action = "">
-				<div>
+		<div>
+			<form action = "" method = "post">
 					<h4>Enter username and password<h4>
-					<div>
 						<input type = "text" class = "textbox" name = "txt_uname" placeholder = "Username" />
-					</div>
-					<div>
 						<input type = "password" class = "textbox" name = "txt_pwd" placeholder = "Password" />
-					</div>
-					<div>
 						<input type = "submit" value = "Log in" name = "sub_btn" id = "sub_btn" />
-					</div>
-				</div>
 			</form>
 		</div>
 		<?php
@@ -58,13 +50,11 @@
 		
 				if($uname != "" && $password != "")
 				{
-					$sql_query = "SELECT COUNT(*) AS cntUser FROM User WHERE username = '".$uname."' AND password = '".$password."'";
+					$sql_query = "SELECT COUNT(*) AS userNum FROM User WHERE username = '".$uname."' AND password = '".$password."'";
 					$result = mysqli_query($conn, $sql_query);
 					$row = mysqli_fetch_array($result);
-				
-					$count = $row['cntUser'];
-				
-					if($count > 0)
+					$cnt = $row['userNum'];
+					if($cnt > 0)
 					{
 						$_SESSION['uname'] = $uname;
 						echo "<script type = 'text/javascript'> document.location = 'index.html'; </script>"; //javascript inside php because the header redirect isn't working
