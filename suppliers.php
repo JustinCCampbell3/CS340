@@ -3,26 +3,29 @@
 		$currentpage="List Suppliers";
 
 ?>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Shoe Buyer</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
+<header>
+	<h1>Shoe Buyer</h1>
 
-  <header>
-    <h1>Shoe Buyer</h1>
-  </header>
-
-
+<div background-color="black" width="100%" text-align="center" height="46px">
   <u1>
     <li><a href="index.html">Home</a></li>
     <li><a href="shoes.php">Shoes</a></li>
     <li><a href="suppliers.php">Suppliers</a></li>
-		<li><a href="addShoes.php">Add a Shoe</a></li>
-    <li><a href="addSuppliers.php">Add by Supplier</a></li>
-  </u1>
 
+  </u1>
+</div>
 <br> &nbsp;
+<br> &nbsp;
+    <title>Shoe Buyer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</header>
+<body style="background-image:url('http://allpicts.in/download/21382/2017/11/Nike_Shoes_Wallpaper_with_Nike_Flyknit_Chukka-1280x960.jpg/');">
+
+
+<h2 style="color: white;">Shoe Suppliers</h2>
 
   <?php
   // change the value of $dbuser and $dbpass to your username and password
@@ -44,8 +47,7 @@
   	}
 
   	if(mysqli_num_rows($result) > 0){
-          echo "<h1>Suppliers</h1>";
-  		echo "<table id='t01' border='1'>";
+  		echo "<table id='t01' border=1>";
           echo "<thead>";
   			echo "<tr>";
   			echo "<th>ID</th>";
@@ -71,6 +73,9 @@
       }
   	mysqli_close($conn);
   ?>
+	<u3>
+		<li><a href="suppliers.php">Search for a Supplier</a></li>
+	<u3>
   </body>
 
 

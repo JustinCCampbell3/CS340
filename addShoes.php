@@ -3,26 +3,31 @@
 		$currentpage="Add Shoes";
 
 ?>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Shoe Buyer</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-
-  <header>
-    <h1>Shoe Buyer</h1>
-  </header>
-
-
+<header>
+	<h1>Shoe Buyer</h1>
+<div background-color="black" width="100%" text-align="center" height="46px">
   <u1>
     <li><a href="index.html">Home</a></li>
     <li><a href="shoes.php">Shoes</a></li>
     <li><a href="suppliers.php">Suppliers</a></li>
-		<li><a href="addShoes.php">Add a Shoe</a></li>
-    <li><a href="addSuppliers.php">Add a Supplier</a></li>
-  </u1>
+		<li><a href="admin.php">Admin</a></li>
 
+  </u1>
+</div>
 <br> &nbsp;
+<br> &nbsp;
+    <title>Shoe Buyer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</header>
+<body style="background-image:url('http://getwallpapers.com/wallpaper/full/4/f/7/713344-full-size-cool-shoes-hd-wallpapers-1920x1200-for-iphone.jpg');">
+
+
+  <div class="footer">
+    <p></p>
+  </div>
 
 <?php
 	$msg = "Add a new Shoe to the Database";
@@ -66,14 +71,15 @@ mysqli_close($conn);
 
 ?>
 
-	<h2> <?php echo $msg; ?> </h2>
+	<h2 style="float: right;"> <?php echo $msg; ?> </h2>
+	<br> &nbsp;
+	<br> &nbsp;
+	<form method="post" id="addForm" align="right">
 
-	<form method="post" id="addForm">
 
-  <legend>Shoe Info:</legend>
   		<p>
   			<label for="shoeID">Shoe ID:</label>
-  			<input type="number" class="required" name="shoeID" id="shoeID">
+  			<input type="text" class="required" name="shoeID" id="shoeID">
   		</p>
   		<p>
   			<label for="Brand">Brand:</label>
@@ -104,9 +110,10 @@ mysqli_close($conn);
     			<input type="text" class="required" name="supplierID" id="supplierID">
     		</p>
       <p>
-        <input type = "submit"  value = "Submit" />
-        <input type = "reset"  value = "Clear Form" />
+        <input type = "submit" value = "Submit" class="searchbarbutton"/>
+        <input type = "reset"  value = "Clear Form" class="searchbarbutton"/>
       </p>
 	</form>
+	<div>
 	</body>
 </html>

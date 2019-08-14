@@ -1,16 +1,32 @@
 li {
-  float: left;
+  float: right;
+}
+
+
+
+html{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  height: 100%;
+
 }
 
 body{
 
-  background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
+
 li a{
-  display: inline-block;
+  display: block;
   color: white;
-  background-color: #FFBF00;
+
   padding: 14px 16px;
   text-align: center;
   text-decoration: none;
@@ -18,45 +34,138 @@ li a{
 
 }
 
+li a:hover{
+  background-color:  purple;
+}
+.required{
+    background-color: white;
+    color: black;
 
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%
+}
+td, th {
+  text-align: left;
+  padding: 8px;
+
+}
+
+td{
+
+color: black;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+tr:hover{
+  background-color:  #FD5AFF;
+}
+
+th{
+  background-color: purple;
+  color: white;
+}
 
 tr{
-  color: #FFBF00;
+  background-color: white
+  color: black ;
 }
 
 p{
-  color: #FFBF00;
+  color: black;
 }
 
 legend{
   color: #FFBF00;
 }
 
-li a:hover{
-  background-color: #FF4000 ;
-}
+.bg{
+  background-image: url(background-image: url(https://wallpapercave.com/wp/EdgejZ5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
+}
 u1 {
   list-style-type: none;
-  width: 800px;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   overflow: hidden;
+}
+
+
+u2 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+  color: black;
+
+}
+
+u3{
+  list-style-type: none;
+  float: left;
+  color: black ;
+  background-color: black;
+}
+
+.bottom:hover{
+  background-color: green;
+}
+
+#nav{
+  background-color: black;
+  width: 100%;
+  text-align: center;
+  height: 46px;
+
 }
 
 .active{
   color: #819FF7
 }
 
+
+/*
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0D1749;
+  color: white;
+  text-align: center;
+}
+*/
 h1 {
-  color: #FFBF00;
+  color: white;
+  float: left;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 
 }
 h2{
-  color: #FFBF00;
+  color: black;
+  text-align: center;
+
 }
+
 header{
-  text-align: left;
+  text-align: center;
+  background-color: black;
+
+
 }
 
 table {
@@ -65,12 +174,28 @@ table {
   width: 100%;
 }
 
-td, th {
-  border: 3px solid orange;
-  text-align: left;
-  padding: 8px;
-}
+.searchbarbutton{
 
-tr:nth-child(even) {
+  margin: 0;
+
+  padding: 5px 15px;
+
+
+  font-size:14px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  color: #ffffff;
+
+  border: solid 2px #FFFFFF;
+
+  background: black;
+
 
 }

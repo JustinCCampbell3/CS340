@@ -3,26 +3,30 @@
 		$currentpage="Add Shoes";
 
 ?>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Shoe Buyer</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-
-  <header>
-    <h1>Shoe Buyer</h1>
-  </header>
-
-
+<header>
+		<h1>Shoe Buyer</h1>
+<div background-color="black" width="100%" text-align="center" height="46px">
   <u1>
     <li><a href="index.html">Home</a></li>
     <li><a href="shoes.php">Shoes</a></li>
     <li><a href="suppliers.php">Suppliers</a></li>
-		<li><a href="addShoes.php">Add a Shoe</a></li>
-    <li><a href="addSuppliers.php">Add a Supplier</a></li>
-  </u1>
+		<li><a href="admin.php">Admin</a></li>
 
+  </u1>
+</div>
 <br> &nbsp;
+<br> &nbsp;
+    <title>Shoe Buyer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</header>
+<br> &nbsp;
+
+	<body style="background-image:url('http://s1.1zoom.me/big0/100/346655-admin.jpg');">
+
+
 
 <?php
 	$msg = "Add a new Shoe Supplier to the Database";
@@ -42,10 +46,10 @@
 		$company_address = mysqli_real_escape_string($conn, $_POST['company_address']);
 
 // See if sid is already in the table
-		$queryIn = "SELECT * FROM Supplier where comapny_name='$company_name' ";
+		$queryIn = "SELECT * FROM Supplier where company_name='$company_name' ";
 		$resultIn = mysqli_query($conn, $queryIn);
 		if (mysqli_num_rows($resultIn)> 0) {
-			$msg ="<h2>Can't Add to Table</h2> There is already a supplier with sid $company_name<p>";
+			$msg ="<h2>Can't Add to Table</h2> There is already a supplier with the ID $company_name<p>";
 		} else {
 
 		// attempt insert query
@@ -62,14 +66,15 @@ mysqli_close($conn);
 
 ?>
 
-	<h2> <?php echo $msg; ?> </h2>
+	<h2 style="float: left;"> <?php echo $msg; ?> </h2>
+	<br> &nbsp;
+	<br> &nbsp;
+	<form method="post" id="addForm" align="left">
 
-	<form method="post" id="addForm">
 
-		<legend>Supplier Info:</legend>
 		<p>
 			<label for="supplierID">Supplier ID:</label>
-			<input type="number" class="required" name="suppplierID" id="supplierID" title="Supplier ID should be numeric">
+			<input type="text" class="required" name="suppplierID" id="supplierID" title="Supplier ID should be numeric">
 		</p>
 		<p>
 			<label for="comapny_name">Company Name:</label>
@@ -81,8 +86,8 @@ mysqli_close($conn);
 
 
       <p>
-        <input type = "submit"  value = "Submit" />
-        <input type = "reset"  value = "Clear Form" />
+        <input type = "submit"  value = "Submit" class="searchbarbutton" />
+        <input type = "reset"  value = "Clear Form" class="searchbarbutton"/>
       </p>
 	</form>
 	</body>
