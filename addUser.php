@@ -1,18 +1,3 @@
-<?php
-	include 'connectvars.php';
-	session_start();
-	if(!isset($_SESSION['uname']))
-	{
-		header('Location: login.php');
-	}
-
-	if(isset($_POST['logout_btn']))
-	{
-		session_destroy();
-		header('Location: login.php');
-	}
-?>
-
 <!DOCTYPE html>
 <?php
 		$currentpage="Add Shoes";
@@ -58,8 +43,8 @@
 // Escape user inputs for security
 		$username = mysqli_real_escape_string($conn, $_POST['username']);
 		$password = mysqli_real_escape_string($conn, $_POST['password']);
-		$firstname = mysqli_real_escape_string($conn, $_POST['First_Name']);
-		$lastname = mysqli_real_escape_string($conn, $_POST['Last_Name']);
+		$First_Name = mysqli_real_escape_string($conn, $_POST['First_Name']);
+		$Last_Name = mysqli_real_escape_string($conn, $_POST['Last_Name']);
 
 // See if username is already in the table
 		$queryIn = "SELECT * FROM User WHERE username='$username' ";
@@ -69,7 +54,7 @@
 		} else {
 
 		// attempt insert query
-			$query = "INSERT INTO User (username, password, First_Name, Last_Name) VALUES ('$username', '$password', '$firstname', '$lastname')";
+			$query = "INSERT INTO User (username, password, First_Name, Last_Name) VALUES ('$username', '$password', '$First_Name', '$Last_Name')";
 			if(mysqli_query($conn, $query)){
 				$msg =  "Registered successfully.<p>";
 			} else{
@@ -89,12 +74,12 @@ mysqli_close($conn);
 
 
 		<p>
-			<label for="firstname">First Name:</label>
-			<input type="text" class="required" name="firstname" id="firstname">
+			<label for="First_Name">First Name:</label>
+			<input type="text" class="required" name="First_Name" id="First_Name">
 		</p>
 		<p>
-			<label for="lastname">Last Name:</label>
-			<input type="text" class="required" name="lastname" id="lastname">
+			<label for="Last_Name">Last Name:</label>
+			<input type="text" class="required" name="Last_Name" id="Last_Name">
 		</p>
 		<p>
 			<label for="username">Username:</label>
