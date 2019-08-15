@@ -1,3 +1,19 @@
+<?php
+	include 'connectvars.php';
+	session_start();
+	if(!isset($_SESSION['uname']))
+	{
+		header('Location: login.php');
+	}
+
+	if(isset($_POST['logout_btn']))
+	{
+		session_destroy();
+		header('Location: login.php');
+	}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <header>
@@ -21,6 +37,8 @@
 </header>
 <body style="background-image:url('https://wallpapercave.com/wp/EdgejZ5.jpg');">
 
-
+<form method = 'post' action = "">
+<input type = "submit" value = "Logout" name = "logout_btn">
+</form>
 </body>
 </html>

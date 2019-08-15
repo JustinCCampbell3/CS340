@@ -2,38 +2,45 @@
 
 <?php
 	$currentpage = "Login Page";
-
+	session_start();
 ?>
 <html>
-	<head>
-		<title>Login</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	
 	<header>
 		<h1>Login</h1>
+		<div background-color="black" width="100%" text-align="center" height="46px">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="shoes.php">Shoes</a></li>
+				<li><a href="suppliers.php">Suppliers</a></li>
+				<li><a href="addShoes.php">Add a Shoe</a></li>
+				<li><a href="addSuppliers.php">Add by Supplier</a></li>
+			</ul>
+		</div>
+		<br> &nbsp;
+		<br> &nbsp;
+		<title>Login Page</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</header>
 	
-	<body>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="shoes.php">Shoes</a></li>
-			<li><a href="suppliers.php">Suppliers</a></li>
-			<li><a href="addShoes.php">Add a Shoe</a></li>
-			<li><a href="addSuppliers.php">Add by Supplier</a></li>
-		</ul>
-
-		<br>
+	<body style="background-image:url('https://w.wallhaven.cc/full/j8/wallhaven-j86mmm.jpg');">
 
 
-		<div>
+
+		<center><div id="box01">
 			<form action = "" method = "post">
-					<h4>Enter username and password<h4>
+				<div id="login_box">
+					<h3>Enter username and password</h3>
+					<div>
 						<input type = "text" class = "textbox" name = "txt_uname" placeholder = "Username" />
+						<br>
+						<br>
 						<input type = "password" class = "textbox" name = "txt_pwd" placeholder = "Password" />
+						<br>
+						<br>
 						<input type = "submit" value = "Log in" name = "sub_btn" id = "sub_btn" />
+				</div>
 			</form>
-		</div>
+		</div></center>
 		<?php
 
 			include 'connectvars.php';
@@ -57,7 +64,7 @@
 					if($cnt > 0)
 					{
 						$_SESSION['uname'] = $uname;
-						echo "<script type = 'text/javascript'> document.location = 'index.html'; </script>"; //javascript inside php because the header redirect isn't working
+						echo "<script type = 'text/javascript'> document.location = 'index.php'; </script>"; //javascript inside php because the header redirect isn't working
 					}
 					else
 					{

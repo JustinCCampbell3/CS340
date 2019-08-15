@@ -199,3 +199,48 @@ table {
 
 
 }
+
+#box01 {
+	width: 30%;
+	margin: 120px;
+	background-color: gray;
+}
+
+#login_box {
+	border: 1px solid black;
+	border-radius: 4px;
+	width: 500px;
+	height: 245px;
+	box-shadow: 0px 4px 4px 0px gray;
+	margin: 0 auto;
+	background-color: gray;
+}
+
+#login_box h3 {
+	margin-top: 0px;
+	font-weight: normal;
+	padding: 10px;
+	background-color: a9a9a9;
+	color: white;
+	font-family: sans-serif;
+}
+
+#login_box div {
+	clear: both;
+	margin-top: 10px;
+	padding: 5px;
+	background-color: gray;
+}
+
+#login_box .textbox {
+	width: 90%;
+	padding: 7px;
+}
+
+#login_box input[type=submit] {
+	padding: 7px;
+	width: 100px;
+	background-color: #a9a9a9;
+	border: 0px;
+	color: white;
+}
