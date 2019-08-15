@@ -244,3 +244,14 @@ table {
 	border: 0px;
 	color: white;
 }
+
+
+#submit_button input[type=submit] {
+	margin-top: 14px;
+	background: black;
+     color: white;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+	cursor: pointer;
+}
