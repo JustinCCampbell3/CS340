@@ -71,6 +71,7 @@
   			echo "<th>Price</th>";
   			echo "<th>Brand</th>";
         echo "<th>ShoeID</th>";
+		echo "<th>Place Order</th>";
   			echo "</tr>";
           echo "</thead>";
           echo "<tbody>";
@@ -81,6 +82,10 @@
   			      echo "<td>" . $row['price'] . "</td>";
               echo "<td>" . $row['brand'] . "</td>";
               echo "<td>" . $row['shoeID'] . "</td>";
+			  echo "<td><form action='placeorder.php' method='post'>
+						<input type='number' name='quant' min=1 placeholder='0' width=20px /><input type='submit' value='Order' />
+						<input type='hidden' name='IDnum' value='". $row['shoeID'] . "' />
+					</form></td>";
               echo "</tr>";
           }
           echo "</tbody>";

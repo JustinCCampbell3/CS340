@@ -13,7 +13,6 @@
     <li><a href="shoes.php">Shoes</a></li>
     <li><a href="suppliers.php">Suppliers</a></li>
     <li><a href="admin.php">Admin</a></li>
-	<li><div id="submit_button"><form method = 'post' action = ""><input type = "submit" value = "Log out" name = "logout_btn" /></form></div></li>
   </u1>
 </div>
 <br> &nbsp;
