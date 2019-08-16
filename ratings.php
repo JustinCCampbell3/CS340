@@ -5,7 +5,6 @@
 	{
 		header('Location: login.php');
 	}
-
 	if(isset($_POST['logout_btn']))
 	{
 		session_destroy();
@@ -13,11 +12,6 @@
 	}
 ?>
 
-<!DOCTYPE html>
-<?php
-		$currentpage="List Shoes";
-
-?>
 <!DOCTYPE html>
 <html>
 <header>
@@ -28,8 +22,8 @@
     <li><a href="index.php">Home</a></li>
     <li><a href="shoes.php">Shoes</a></li>
     <li><a href="suppliers.php">Suppliers</a></li>
-    <li><a href="admin.php">Admin</a></li>
-	<li><div id="submit_button"><form method = 'post' action = ""><input type = "submit" value = "Log out" name = "logout_btn" /></form></div></li>
+		<li><a href="admin.php">Admin</a></li>
+			<li><div id="submit_button"><form method = 'post' action = ""><input type = "submit" value = "Log out" name = "logout_btn" /></form></div></li>
   </u1>
 </div>
 <br> &nbsp;
@@ -38,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </header>
+<body style="background-image:url('http://allpicts.in/download/21382/2017/11/Nike_Shoes_Wallpaper_with_Nike_Flyknit_Chukka-1280x960.jpg/');">
 
-<body style="background-image:url('https://wallpapercave.com/wp/gOwBe5H.png');">
 
-<h2 style="color:white;">Shoes</h2>
+<h2 style="color: white;">Shoe Ratings</h2>
 
   <?php
   // change the value of $dbuser and $dbpass to your username and password
@@ -54,7 +48,7 @@
   	}
 
   // query to select all information from supplier table
-  	$query = "SELECT name, price, brand, shoeID FROM Shoe ";
+  	$query = " SELECT DISTINCT Shoe.shoeID, Shoe.name, AVG(Rating.rating) FROM Rating, Shoe WHERE Rating.shoeID=Shoe.shoeID GROUP BY shoeID";
 
   // Get results from query
   	$result = mysqli_query($conn, $query);
@@ -63,24 +57,21 @@
   	}
 
   	if(mysqli_num_rows($result) > 0){
-
-  		echo "<table id='t01' border='1'>";
+  		echo "<table id='t01' border=1>";
           echo "<thead>";
   			echo "<tr>";
+  			echo "<th>Shoe ID</th>";
   			echo "<th>Name</th>";
-  			echo "<th>Price</th>";
-  			echo "<th>Brand</th>";
-        echo "<th>ShoeID</th>";
+  			echo "<th>Average Shoe Rating</th>";
   			echo "</tr>";
           echo "</thead>";
           echo "<tbody>";
 
           while($row = mysqli_fetch_array($result)){
               echo "<tr>";
-              echo "<td>" . $row['name'] . "</td>";
-  			      echo "<td>" . $row['price'] . "</td>";
-              echo "<td>" . $row['brand'] . "</td>";
               echo "<td>" . $row['shoeID'] . "</td>";
+  			      echo "<td>" . $row['name'] . "</td>";
+              echo "<td>" . $row['AVG(Rating.rating)'] . "</td>";
               echo "</tr>";
           }
           echo "</tbody>";
@@ -93,11 +84,9 @@
   	mysqli_close($conn);
   ?>
 	<u3>
-		<li color="black"><a color="black" href="searchShoes.php">Search for a Shoe</a></li>
-		<li color="black"><a color="black" href="searchOrders.php">Search for an Order</a></li>
-		<li color="black"><a color="black" href="ratings.php">View Shoe Ratings</a></li>
+		<li color="black"><a color="black" href="addRatings.php">Add a Shoe Rating</a></li>
 	<u3>
-	</body>
+  </body>
 
 
 </html>
